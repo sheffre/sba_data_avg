@@ -7,6 +7,8 @@ install_if_missing <- function(pkg) {
   }
 }
 
+lapply(required_packages, install_if_missing)
+
 library("DBI")
 library("RPostgres")
 
