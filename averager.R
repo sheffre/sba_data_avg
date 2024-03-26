@@ -1,8 +1,14 @@
 #auto averaging script
-install.packages(c("DBI", "RPostgres"))
-library(DBI)
-library(RPostgres)
+required_packages <- c("DBI", "RPostgres")
 
+install_if_missing <- function(pkg) {
+  if (!requireNamespace(pkg, quietly = TRUE)) {
+    install.packages(pkg, dependencies = TRUE)
+  }
+}
+
+library("DBI")
+library("RPostgres")
 
 # conn <- dbConnect(drv = RPostgres::Postgres(),
 #                   host     = '81.31.246.77',
