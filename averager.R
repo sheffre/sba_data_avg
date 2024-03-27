@@ -96,7 +96,7 @@ upper_time <- as.POSIXct(upper_time, tz = "")
 
 avg <- vector()
 for(i in c(1:length(upper_time))) {
-  avg_var <- mean(subset(df, df$timestamp <= upper_time[1] & df$timestamp >= upper_time[i]-3600)$co2_partial_pressure)
+  avg_var <- mean(subset(df, df$timestamp <= upper_time[i] & df$timestamp >= upper_time[i+1])$co2_partial_pressure)
   avg_var <- round(avg_var)
   avg[i] <- avg_var
 }
