@@ -87,7 +87,6 @@ df$timestamp <- force_tz(df$timestamp, tzone = "Europe/Moscow")
 
 df$hour <- format(as.POSIXct(df$timestamp), format = "%H")
 
-levels(as.factor(df$hour))
 
 avg <- vector()
 for (i in levels(as.factor(df$hour))) {
@@ -103,7 +102,6 @@ for(i in c(1:23)) {
 }
 rm(i)
 
-upper_time[1]
 upper_time <- rev(upper_time)
 
 df_append <- as.data.frame(cbind(round(avg), upper_time))
