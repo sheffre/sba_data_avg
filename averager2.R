@@ -14,7 +14,6 @@ lapply(required_packages, install_if_missing)
 library(DBI)
 library(RPostgres)
 library(lubridate)
-library(dplyr)
 
 
 # conn <- dbConnect(drv = RPostgres::Postgres(),
